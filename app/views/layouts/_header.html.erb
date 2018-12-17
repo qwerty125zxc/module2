@@ -1,0 +1,13 @@
+<%= link_to "Home", root_path %>
+<% if !user_signed_in? %>
+<%= link_to "Login or sign up", new_user_session_path %>
+<% else %>
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<% if current_user.usparam.nil? %>
+     <%= link_to "Profile", new_usparam_path %>
+  <% else %>
+   <%= link_to "Profile", usparam_path(current_user.id) %>
+  <% end %>
+  <%= link_to "Add product", new_product_path %>
+<%end%>
+<hr>

@@ -1,0 +1,12 @@
+<h1>Catalog</h1>
+<% if @prods == [] %>
+    <p>No products yet</p>
+<% else %>
+  <%= @prods.each do |p| %>
+    <p>
+      <big><%= p.title %></big><br>
+      <%= p.description %><br>
+      <%= p.price %><br>
+    </p>
+  <% end %>
+<% end %>
